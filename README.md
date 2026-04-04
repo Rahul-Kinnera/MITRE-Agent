@@ -6,6 +6,28 @@ The idea behind the project is simple. A user runs the stack on their own machin
 
 This project is meant to help with triage and investigation, not replace an analyst. The ATT&CK detections are heuristic, and the threat-actor section is intentionally conservative so the tool does not overstate attribution.
 
+## Docker Image
+
+The repository is set up to publish a container image to GitHub Container Registry.
+
+Expected image:
+
+```bash
+ghcr.io/rahul-kinnera/mitre-agent:latest
+```
+
+Once the GitHub Actions workflow runs successfully, people will be able to pull it with:
+
+```bash
+docker pull ghcr.io/rahul-kinnera/mitre-agent:latest
+```
+
+Then run it with:
+
+```bash
+docker run -p 8000:8000 -e MITRE_AGENT_DATA_DIR=/data -v ./runtime:/data ghcr.io/rahul-kinnera/mitre-agent:latest
+```
+
 ## What MITRE Agent Does
 
 - Accepts local log files and extracts behavior evidence that may map to ATT&CK techniques.

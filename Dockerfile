@@ -4,6 +4,10 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV MITRE_AGENT_DATA_DIR=/data
 
+LABEL org.opencontainers.image.title="MITRE Agent"
+LABEL org.opencontainers.image.description="Local-first MITRE ATT&CK and D3FEND analysis agent for self-hosted log triage."
+LABEL org.opencontainers.image.source="https://github.com/Rahul-Kinnera/MITRE-Agent"
+
 WORKDIR /app
 
 COPY requirements.txt .
