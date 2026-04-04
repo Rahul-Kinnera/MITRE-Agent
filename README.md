@@ -1,28 +1,30 @@
 # MITRE Agent
 
-MITRE Agent is a self-hosted, Docker-first analyst assistant for mapping local logs to MITRE ATT&CK techniques, projecting defensive countermeasures into MITRE D3FEND, and generating a local report with official MITRE citations.
+MITRE Agent is a self-hosted project for people who want to analyze local logs with MITRE ATT&CK and MITRE D3FEND without giving up control of their data.
 
-It is designed for people who want ATT&CK-style investigation support without sending logs to a third-party service.
+The idea behind the project is simple. A user runs the stack on their own machine, uploads or points the tool at local logs, and gets back a practical first-pass analysis. The application looks for behaviors that map to ATT&CK techniques, builds a visual ATT&CK-style view, maps related defensive countermeasures through D3FEND, and generates a downloadable report with citations back to official MITRE sources.
 
-![MITRE Agent dashboard preview](docs/assets/dashboard-sample.svg)
+This project is meant to help with triage and investigation, not replace an analyst. The ATT&CK detections are heuristic, and the threat-actor section is intentionally conservative so the tool does not overstate attribution.
 
-![MITRE Agent report preview](docs/assets/report-sample.svg)
+## What MITRE Agent Does
 
-## What It Does
+- Accepts local log files and extracts behavior evidence that may map to ATT&CK techniques.
+- Produces a visual ATT&CK-style matrix and a downloadable ATT&CK Navigator layer JSON file.
+- Uses official MITRE D3FEND data to map possible defensive countermeasures for observed behaviors.
+- Generates a local HTML report with citations to official MITRE material.
+- Provides an initial threat-actor overlap view based on ATT&CK group-to-technique relationships.
 
-- Ingests local log files and extracts behavior evidence using ATT&CK-oriented heuristics.
-- Produces an ATT&CK visual map and downloadable ATT&CK Navigator layer JSON.
-- Maps observed ATT&CK techniques to D3FEND countermeasures using official MITRE D3FEND data.
-- Generates a downloadable HTML report with citations back to official MITRE sources.
-- Provides an initial, conservative threat-actor overlap view based on ATT&CK group technique relationships.
+## Why It Exists
+
+A lot of security tooling becomes less attractive the moment sensitive log data has to leave the environment. MITRE Agent was built to stay local-first. The user keeps control of the runtime, the cached data, and the analysis outputs. That makes it easier to test, share, and improve without turning the project into a hosted platform.
 
 ## Privacy Model
 
 - Logs are processed locally by the running container.
-- Cached ATT&CK and D3FEND reference data stays under `runtime/cache/`.
-- Generated reports and analysis artifacts stay under `runtime/reports/`.
-- Uploaded files stay under `runtime/uploads/`.
-- No external database or cloud storage is required.
+- Cached ATT&CK and D3FEND reference data lives under `runtime/cache/`.
+- Generated reports and analysis artifacts live under `runtime/reports/`.
+- Uploaded files live under `runtime/uploads/`.
+- No external database is required.
 
 ## Official Data Sources
 
@@ -36,30 +38,26 @@ MITRE Agent syncs and cites from MITRE-controlled sources:
 
 ## Quick Start
 
-### 1. Start the stack
+Start the stack with:
 
 ```bash
 docker compose up --build
 ```
 
-Open:
+Once the containers are up:
 
-- App UI: [http://localhost:8000](http://localhost:8000)
-- ATT&CK Navigator: [http://localhost:4200](http://localhost:4200)
+1. Open the app at `http://localhost:8000`
+2. Open ATT&CK Navigator at `http://localhost:4200`
+3. Click `Sync MITRE Data` before the first analysis run
+4. Upload one or more local log files
 
-### 2. Sync MITRE data
+After analysis, the app will give you:
 
-Use the `Sync MITRE Data` button in the UI before your first analysis run.
-
-### 3. Analyze local logs
-
-Upload one or more local log files. The app will generate:
-
-- an ATT&CK-style matrix view,
-- a downloadable ATT&CK Navigator layer JSON,
+- an ATT&CK-style visual view,
+- a downloadable ATT&CK Navigator layer,
 - a D3FEND countermeasure map,
-- an HTML report with citations,
-- a conservative threat-actor overlap view.
+- a downloadable HTML report,
+- a conservative threat-actor overlap section.
 
 ## Project Layout
 
@@ -73,7 +71,6 @@ app/
   reporting.py
   static/
 docs/
-  assets/
   RELEASE_CHECKLIST.md
 runtime/
   cache/
@@ -81,26 +78,21 @@ runtime/
   uploads/
 ```
 
-## Detection and Attribution Notes
+## Important Notes
 
-- ATT&CK detections are heuristic and intended for triage support.
-- Threat-actor results are intentionally conservative and suppress weak single-technique overlaps.
-- MITRE Agent helps prioritize analyst review; it does not perform definitive attribution.
-
-## Running Notes
-
-- The main API and UI are served by the `mitre-agent` container.
-- The ATT&CK Navigator UI is served by MITRE’s published Navigator container.
-- Data is mounted from the local `runtime/` directory so users retain control over cache and outputs.
+- ATT&CK detections are heuristic and meant to support triage.
+- Threat-actor overlap is not the same as attribution.
+- Some ATT&CK techniques may not have a corresponding D3FEND mapping in the official dataset.
+- The project is currently strongest as a transparent, self-hosted foundation that can be expanded over time.
 
 ## Release Prep
 
-See [docs/RELEASE_CHECKLIST.md](docs/RELEASE_CHECKLIST.md) before publishing a GitHub release or sharing the project more broadly.
+Before publishing a release or sharing the project more broadly, review [docs/RELEASE_CHECKLIST.md](docs/RELEASE_CHECKLIST.md).
 
 ## Roadmap
 
-- Improve behavioral detection coverage for common Windows, Linux, and cloud log sources.
-- Add analyst-tunable detection packs instead of hard-coded heuristics only.
-- Add better suppression logic for benign administration patterns.
-- Add packaged demo datasets and reproducible walkthroughs.
-- Add CI, tests, and release automation for public distribution.
+- Improve detection coverage for real-world Windows, Linux, and cloud log sources.
+- Add better suppression for benign administrative activity.
+- Support analyst-tunable detection packs instead of relying only on built-in heuristics.
+- Add tests, CI, and release automation.
+- Add demo datasets and reproducible walkthroughs for contributors and reviewers.
