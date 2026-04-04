@@ -1,0 +1,45 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1440" height="900" fill="#F7F4EA"/>
+  <rect x="40" y="34" width="1360" height="160" rx="28" fill="#FFFDF7" stroke="#D4C5A1" stroke-width="2"/>
+  <text x="82" y="86" fill="#9E2A2B" font-family="Georgia, serif" font-size="18" letter-spacing="3">LOCAL-FIRST THREAT MAPPING</text>
+  <text x="82" y="146" fill="#132A13" font-family="Georgia, serif" font-size="56" font-weight="700">MITRE Agent</text>
+  <text x="82" y="188" fill="#3F5537" font-family="Georgia, serif" font-size="24">ATT&amp;CK mapping, D3FEND countermeasures, and conservative threat overlap.</text>
+  <rect x="83" y="214" width="220" height="46" rx="23" fill="#335C67"/>
+  <text x="126" y="243" fill="white" font-family="Georgia, serif" font-size="20">Sync MITRE Data</text>
+  <rect x="316" y="214" width="250" height="46" rx="23" fill="white" stroke="#D4C5A1" stroke-width="2"/>
+  <text x="360" y="243" fill="#132A13" font-family="Georgia, serif" font-size="20">Open ATT&amp;CK Navigator</text>
+
+  <rect x="40" y="220" width="1360" height="130" rx="24" fill="#FFFDF7" stroke="#D4C5A1" stroke-width="2"/>
+  <text x="72" y="264" fill="#132A13" font-family="Georgia, serif" font-size="30" font-weight="700">Analysis Summary</text>
+  <rect x="72" y="286" width="240" height="44" rx="16" fill="#F0E6CF"/>
+  <text x="96" y="314" fill="#3F5537" font-family="Georgia, serif" font-size="18">Files analyzed: 3</text>
+  <rect x="328" y="286" width="240" height="44" rx="16" fill="#F0E6CF"/>
+  <text x="352" y="314" fill="#3F5537" font-family="Georgia, serif" font-size="18">Techniques detected: 7</text>
+  <rect x="584" y="286" width="280" height="44" rx="16" fill="#F0E6CF"/>
+  <text x="608" y="314" fill="#3F5537" font-family="Georgia, serif" font-size="18">High-confidence techniques: 4</text>
+
+  <rect x="40" y="374" width="650" height="470" rx="24" fill="#FFFDF7" stroke="#D4C5A1" stroke-width="2"/>
+  <text x="72" y="420" fill="#132A13" font-family="Georgia, serif" font-size="30" font-weight="700">ATT&amp;CK Visual Map</text>
+  <rect x="72" y="446" width="172" height="360" rx="18" fill="#FAF4E4" stroke="#D4C5A1"/>
+  <text x="96" y="478" fill="#132A13" font-family="Georgia, serif" font-size="22">Execution</text>
+  <text x="96" y="520" fill="#335C67" font-family="Georgia, serif" font-size="18">T1059.001 PowerShell</text>
+  <rect x="260" y="446" width="172" height="360" rx="18" fill="#FAF4E4" stroke="#D4C5A1"/>
+  <text x="284" y="478" fill="#132A13" font-family="Georgia, serif" font-size="22">Defense Evasion</text>
+  <text x="284" y="520" fill="#335C67" font-family="Georgia, serif" font-size="18">T1218.011 Rundll32</text>
+  <text x="284" y="550" fill="#335C67" font-family="Georgia, serif" font-size="18">T1218.010 Regsvr32</text>
+  <rect x="448" y="446" width="210" height="360" rx="18" fill="#FAF4E4" stroke="#D4C5A1"/>
+  <text x="472" y="478" fill="#132A13" font-family="Georgia, serif" font-size="22">Persistence</text>
+  <text x="472" y="520" fill="#335C67" font-family="Georgia, serif" font-size="18">T1543.003 Windows Service</text>
+
+  <rect x="716" y="374" width="684" height="220" rx="24" fill="#FFFDF7" stroke="#D4C5A1" stroke-width="2"/>
+  <text x="748" y="420" fill="#132A13" font-family="Georgia, serif" font-size="30" font-weight="700">D3FEND Countermeasures</text>
+  <text x="748" y="468" fill="#335C67" font-family="Georgia, serif" font-size="20">d3f:ExecutableAllowlisting</text>
+  <text x="748" y="500" fill="#335C67" font-family="Georgia, serif" font-size="20">d3f:ProcessSpawnAnalysis</text>
+  <text x="748" y="532" fill="#335C67" font-family="Georgia, serif" font-size="20">d3f:SystemConfigurationPermissions</text>
+
+  <rect x="716" y="624" width="684" height="220" rx="24" fill="#FFFDF7" stroke="#D4C5A1" stroke-width="2"/>
+  <text x="748" y="670" fill="#132A13" font-family="Georgia, serif" font-size="30" font-weight="700">Initial Threat Actor Analysis</text>
+  <text x="748" y="718" fill="#3F5537" font-family="Georgia, serif" font-size="20">Medium confidence overlap based on 3 matched ATT&amp;CK techniques.</text>
+  <text x="748" y="754" fill="#335C67" font-family="Georgia, serif" font-size="22">G0094 Kimsuky</text>
+  <text x="748" y="786" fill="#3F5537" font-family="Georgia, serif" font-size="18">Support 0.43 | Weighted score 0.48 | Conservative triage only</text>
+</svg>

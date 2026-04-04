@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+runtime/cache/*
+runtime/reports/*
+runtime/uploads/*
+!runtime/cache/.gitkeep
+!runtime/reports/.gitkeep
+!runtime/uploads/.gitkeep

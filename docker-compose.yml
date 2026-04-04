@@ -1,0 +1,20 @@
+services:
+  mitre-agent:
+    build:
+      context: .
+    container_name: mitre-agent
+    ports:
+      - "8000:8000"
+    environment:
+      MITRE_AGENT_DATA_DIR: /data
+      MITRE_AGENT_AUTO_SYNC: "false"
+    volumes:
+      - ./runtime:/data
+    restart: unless-stopped
+
+  attack-navigator:
+    image: ghcr.io/mitre-attack/attack-navigator:v5.2.0
+    container_name: mitre-agent-navigator
+    ports:
+      - "4200:80"
+    restart: unless-stopped

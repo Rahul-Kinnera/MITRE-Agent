@@ -1,0 +1,24 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" fill="#FFFFFF"/>
+  <text x="70" y="90" fill="#111827" font-family="Arial, sans-serif" font-size="42" font-weight="700">MITRE Agent Report</text>
+  <text x="70" y="128" fill="#475569" font-family="Arial, sans-serif" font-size="20">Citation-backed ATT&amp;CK and D3FEND report generated locally.</text>
+  <rect x="70" y="160" width="1060" height="90" rx="16" fill="#FFF7ED" stroke="#FDBA74" stroke-width="2"/>
+  <text x="96" y="208" fill="#9A3412" font-family="Arial, sans-serif" font-size="20">Threat actor overlap is triage assistance only and should not be treated as attribution.</text>
+
+  <text x="70" y="304" fill="#111827" font-family="Arial, sans-serif" font-size="28" font-weight="700">Observed ATT&amp;CK Techniques</text>
+  <rect x="70" y="326" width="1060" height="170" rx="12" fill="#F8FAFC" stroke="#CBD5E1"/>
+  <text x="92" y="362" fill="#0F172A" font-family="Arial, sans-serif" font-size="18">T1218.011 Rundll32</text>
+  <text x="92" y="392" fill="#475569" font-family="Arial, sans-serif" font-size="16">Defense Evasion | 2 hits | medium confidence</text>
+  <text x="92" y="436" fill="#0F172A" font-family="Arial, sans-serif" font-size="18">T1543.003 Windows Service</text>
+  <text x="92" y="466" fill="#475569" font-family="Arial, sans-serif" font-size="16">Persistence / Privilege Escalation | 1 hit | high confidence</text>
+
+  <text x="70" y="556" fill="#111827" font-family="Arial, sans-serif" font-size="28" font-weight="700">D3FEND Countermeasure Mapping</text>
+  <rect x="70" y="578" width="1060" height="140" rx="12" fill="#F8FAFC" stroke="#CBD5E1"/>
+  <text x="92" y="614" fill="#0F172A" font-family="Arial, sans-serif" font-size="18">d3f:ExecutableAllowlisting</text>
+  <text x="92" y="646" fill="#475569" font-family="Arial, sans-serif" font-size="16">Mapped from T1218.011 via official D3FEND inference data</text>
+  <text x="92" y="684" fill="#0F172A" font-family="Arial, sans-serif" font-size="18">d3f:SystemConfigurationPermissions</text>
+
+  <text x="70" y="774" fill="#111827" font-family="Arial, sans-serif" font-size="28" font-weight="700">Citations</text>
+  <text x="92" y="814" fill="#2563EB" font-family="Arial, sans-serif" font-size="18">MITRE ATT&amp;CK Enterprise Matrix</text>
+  <text x="92" y="844" fill="#2563EB" font-family="Arial, sans-serif" font-size="18">MITRE D3FEND Resources</text>
+</svg>

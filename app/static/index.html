@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MITRE Agent</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <p class="eyebrow">Local-First Threat Mapping</p>
+      <h1>MITRE Agent</h1>
+      <p class="lede">
+        Upload local logs, map behaviors to MITRE ATT&amp;CK, project countermeasures into D3FEND,
+        and generate a citation-backed analyst report without handing your log data to a third party.
+      </p>
+      <div class="actions">
+        <button id="syncButton" class="primary">Sync MITRE Data</button>
+        <a class="secondary" href="http://localhost:4200/" target="_blank" rel="noreferrer">Open ATT&amp;CK Navigator</a>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Analyze Logs</h2>
+      <p class="muted">Supported inputs: text logs, JSON, JSONL, and CSV-like exports.</p>
+      <form id="analyzeForm">
+        <input id="logFiles" type="file" name="files" multiple required />
+        <button class="primary" type="submit">Run Analysis</button>
+      </form>
+      <div id="status" class="status"></div>
+    </section>
+
+    <section id="downloads" class="panel hidden"></section>
+    <section id="summary" class="panel hidden"></section>
+    <section id="attackMatrix" class="panel hidden"></section>
+    <section id="d3fendMatrix" class="panel hidden"></section>
+    <section id="actorOverlap" class="panel hidden"></section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
